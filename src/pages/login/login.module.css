@@ -1,0 +1,29 @@
+.loginContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+}
+.bannerSection {
+    width: 45%;
+    height: 100%
+}
+.img {
+    height: 100%;
+    width: 100%;
+}
+.loginSection {
+    width: 55%;
+    height: 100%;
+}
+
+.headingContainer {
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.headingContainer p:nth-child(1) {
+    color: #72DB73;
+}
+
+
+
+
