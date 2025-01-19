@@ -1,0 +1,17 @@
+.cardContainer {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    justify-content: space-between;
+    padding: 10px;
+}
+.imgContainer {
+    width: 180px;
+    height: 100px;
+}
+.img {
+    width: 95%;
+    height: 100%;
+}
+

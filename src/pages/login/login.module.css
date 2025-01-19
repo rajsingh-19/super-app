@@ -25,5 +25,56 @@
 }
 
 
+.inputContainer {
+    width: 400px;
+    height: 50px;
+    background-color: #292929;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+    color: #7C7C7C;
+    background-color: #292929;
+}
+
+
+.btnContainer {
+    width: 400px;
+    height: 40px;
+}
+.btn {
+    color: #FFFFFF;
+    background-color: #72DB73;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/*      tnc and policy */
+.tnc {
+    color: #7C7C7C;
+}
+.tnc span {
+    color: #72DB73;
+}
+.policy {
+    color: #7C7C7C;
+}
+.policy span {
+    color: #72DB73;
+}
+
+
+/*      error message    */
+.errorMessage {
+    height: 20px;
+    color: red;
+}
 
 

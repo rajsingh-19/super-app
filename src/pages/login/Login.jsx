@@ -17,20 +17,20 @@ const Login = () => {
         const validationErrors = {};
 
         if (!registerForm.name.trim()) {
-        validationErrors.name = "Name is required.";
+        validationErrors.name = "Field is required.";
+        };
+
+        if (!registerForm.userName.trim()) {
+            validationErrors.userName = "Field is required.";
         };
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(registerForm.email)) {
-        validationErrors.userName = "Field is required.";
+        validationErrors.email = "Field is required.";
         };
 
         if(registerForm.mobile.length < 10 ) {
             validationErrors.mobile = "Field is required.";
-        };
-
-        if (registerForm.password.length < 8) {
-        validationErrors.password = "Field is required.";
         };
 
         if (!checkboxChecked) {
@@ -39,9 +39,7 @@ const Login = () => {
 
         setErrors(validationErrors);
         return Object.keys(validationErrors).length === 0;
-  };
-
-
+    };
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -70,36 +68,39 @@ const Login = () => {
                     <p>Create your new account</p>
                 </div>
                 <form onSubmit={handleRegister} className="flex dir-col align-center">
-                    <div className={`${styles.inputContainer} flex dir-row justify-center align-center`}>
+                    <div className={`${styles.inputContainer} flex`}>
                         <input className={`${styles.input} text-16 dm-sans font-wt-500 border-none outline-none`} type="text" name='name' value={registerForm.name} placeholder="Name" onChange={(e) => setRegisterForm({...registerForm, [e.target.name]: e.target.value})} />
                     </div>
-                    {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
-                    <div className={`${styles.inputContainer} flex dir-row justify-center align-center`}>
+                        {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
+                    <div className={`${styles.inputContainer} flex`}>
                         <input className={`${styles.input} text-16 dm-sans font-wt-500 border-none outline-none`} name='text' value={registerForm.userName} placeholder="UserName" onChange={(e) => setRegisterForm({...registerForm, [e.target.name]: e.target.value})} />
                     </div>
-                    {errors.userName && <p className={styles.errorMessage}>{errors.userName}</p>}
-                    <div className={`${styles.inputContainer} flex dir-row justify-center align-center`}>
+                        {errors.userName && <p className={styles.errorMessage}>{errors.userName}</p>}
+                    <div className={`${styles.inputContainer} flex`}>
                         <input className={`${styles.input} text-16 dm-sans font-wt-500 border-none outline-none`} type="email" name='email' value={registerForm.email} placeholder="Email" onChange={(e) => setRegisterForm({...registerForm, [e.target.name]: e.target.value})} />
                     </div>
-                    {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
-                    <div className={`${styles.inputContainer} flex dir-row justify-center align-center`}>
+                        {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
+                    <div className={`${styles.inputContainer} flex`}>
                         <input className={`${styles.input} text-16 dm-sans font-wt-500 border-none outline-none`} type="number" name='mobile' value={registerForm.mobile} placeholder="Mobile" onChange={(e) => setRegisterForm({...registerForm, [e.target.name]: e.target.value})} />
                     </div>
-                    {errors.mobile && <p className={styles.errorMessage}>{errors.mobile}</p>}
+                        {errors.mobile && <p className={styles.errorMessage}>{errors.mobile}</p>}
                     <div className="flex dir-row align-center m-t-15">
                         <input className={`${styles.checkbox} m-r-5`} type="checkbox" checked={checkboxChecked} onChange={(e) => setCheckboxChecked(e.target.checked)} />
                         <p className="text-grayClr">Share my registration data with Superapp</p>
                     </div>
-                    {errors.checkbox && <p className={styles.errorMessage}>{errors.checkbox}</p>}
-                    <div>
-                        <button type="submit" className="btn outline-none border-none font-wt-700 text-16 m-t-30 cursor-pointer">Create Account</button>
+                        {errors.checkbox && <p className={styles.errorMessage}>{errors.checkbox}</p>}
+                    <div className={styles.btnContainer}>
+                        <button type="submit" className={`${styles.btn} outline-none border-none font-wt-600 text-16 cursor-pointer`}>SIGN UP</button>
                     </div>
                 </form>
-                <div>
-                    By clicking on Sign up. you agree to Superapp Terms and Conditions of Use
+                <div className={styles.tnc}>
+                    <p>By clicking on Sign up. you agree to Superapp <span>Terms and</span></p>
+                    <p><span>Conditions of Use</span></p>
                 </div>
-                <div>
-                    To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp Privacy Policy
+                <div className={styles.policy}>
+                    <p>To learn more about how Superapp collects, uses, shares and</p>
+                    <p>protects your personal data please head Superapp <span>Privacy</span></p>
+                    <p><span>Policy</span></p>
                 </div>
             </div>
         </div>
